@@ -1,0 +1,7 @@
+prefix=@@PREFIX@@
+includedir=${prefix}/include
+
+Name: ffmtcodec
+Description: Moore Threads MT/MUSA codec ABI and FFmpeg dynamic-loader headers
+Version: 13.0.0.0
+Cflags: -I${includedir}

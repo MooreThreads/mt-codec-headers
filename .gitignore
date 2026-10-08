@@ -1,0 +1,3 @@
+ffmtcodec.pc
+stage/
+.header-check.c
