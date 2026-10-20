@@ -24,6 +24,7 @@ typedef struct MusaFunctions {
     tmuDeviceGetPCIBusId *muDeviceGetPCIBusId;
     tmuDeviceComputeCapability *muDeviceComputeCapability;
     tmuCtxCreate_v2 *muCtxCreate;
+    tmuCtxSynchronize *muCtxSynchronize;
     tmuCtxGetCurrent *muCtxGetCurrent;
     tmuCtxSetLimit *muCtxSetLimit;
     tmuCtxPushCurrent_v2 *muCtxPushCurrent;
@@ -79,6 +80,7 @@ typedef struct MusaFunctions {
     tmuTexObjectDestroy *muTexObjectDestroy;
 
     //tmuGLGetDevices_v2 *muGLGetDevices;
+    tmuGraphicsGLRegisterBuffer *muGraphicsGLRegisterBuffer;
     tmuGraphicsGLRegisterImage *muGraphicsGLRegisterImage;
     tmuGraphicsUnregisterResource *muGraphicsUnregisterResource;
     tmuGraphicsMapResources *muGraphicsMapResources;
@@ -134,6 +136,7 @@ static inline int musa_load_functions(MusaFunctions **functions, void *logctx)
     FFMT_LOAD_SYMBOL(muDeviceGetName, tmuDeviceGetName, "muDeviceGetName");
     FFMT_LOAD_SYMBOL(muDeviceComputeCapability, tmuDeviceComputeCapability, "muDeviceComputeCapability");
     FFMT_LOAD_SYMBOL(muCtxCreate, tmuCtxCreate_v2, "muCtxCreate_v2");
+    FFMT_LOAD_SYMBOL(muCtxSynchronize, tmuCtxSynchronize, "muCtxSynchronize");
     FFMT_LOAD_SYMBOL(muCtxGetCurrent, tmuCtxGetCurrent, "muCtxGetCurrent");
     FFMT_LOAD_SYMBOL(muCtxSetLimit, tmuCtxSetLimit, "muCtxSetLimit");
     FFMT_LOAD_SYMBOL(muCtxPushCurrent, tmuCtxPushCurrent_v2, "muCtxPushCurrent_v2");
@@ -189,6 +192,7 @@ static inline int musa_load_functions(MusaFunctions **functions, void *logctx)
     FFMT_LOAD_SYMBOL(muTexObjectDestroy, tmuTexObjectDestroy, "muTexObjectDestroy");
 
     //FFMT_LOAD_SYMBOL(muGLGetDevices, tmuGLGetDevices_v2, "muGLGetDevices_v2");
+    FFMT_LOAD_SYMBOL(muGraphicsGLRegisterBuffer, tmuGraphicsGLRegisterBuffer, "muGraphicsGLRegisterBuffer");
     FFMT_LOAD_SYMBOL(muGraphicsGLRegisterImage, tmuGraphicsGLRegisterImage, "muGraphicsGLRegisterImage");
     FFMT_LOAD_SYMBOL(muGraphicsUnregisterResource, tmuGraphicsUnregisterResource, "muGraphicsUnregisterResource");
     FFMT_LOAD_SYMBOL(muGraphicsMapResources, tmuGraphicsMapResources, "muGraphicsMapResources");

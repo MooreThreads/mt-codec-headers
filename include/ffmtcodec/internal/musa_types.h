@@ -12,6 +12,7 @@
 /* Preserve native function-table member spellings across SDK API-name mappings. */
 #undef muDeviceGetUuid_v2
 #undef muCtxCreate
+#undef muCtxSynchronize
 #undef muCtxPushCurrent
 #undef muCtxPopCurrent
 #undef muCtxDestroy
@@ -222,6 +223,7 @@ typedef MUresult MUSAAPI tmuDeviceGetByPCIBusId(MUdevice* dev, const char* pciBu
 typedef MUresult MUSAAPI tmuDeviceGetPCIBusId(char* pciBusId, int len, MUdevice dev);
 typedef MUresult MUSAAPI tmuDeviceComputeCapability(int *major, int *minor, MUdevice dev);
 typedef MUresult MUSAAPI tmuCtxCreate_v2(MUcontext *pctx, unsigned int flags, MUdevice dev);
+typedef MUresult MUSAAPI tmuCtxSynchronize(void);
 typedef MUresult MUSAAPI tmuCtxGetCurrent(MUcontext *pctx);
 typedef MUresult MUSAAPI tmuCtxSetLimit(MUlimit limit, size_t value);
 typedef MUresult MUSAAPI tmuCtxPushCurrent_v2(MUcontext pctx);
@@ -277,6 +279,7 @@ typedef MUresult MUSAAPI tmuTexObjectCreate(MUtexObject* pTexObject, const MUSA_
 typedef MUresult MUSAAPI tmuTexObjectDestroy(MUtexObject texObject);
 
 typedef MUresult MUSAAPI tmuGLGetDevices_v2(unsigned int* pMusaDeviceCount, MUdevice* pMusaDevices, unsigned int musaDeviceCount, MUGLDeviceList deviceList);
+typedef MUresult MUSAAPI tmuGraphicsGLRegisterBuffer(MUgraphicsResource *pMusaResource, GLuint buffer, unsigned int Flags);
 typedef MUresult MUSAAPI tmuGraphicsGLRegisterImage(MUgraphicsResource* pMusaResource, GLuint image, GLenum target, unsigned int Flags);
 typedef MUresult MUSAAPI tmuGraphicsUnregisterResource(MUgraphicsResource resource);
 typedef MUresult MUSAAPI tmuGraphicsMapResources(unsigned int count, MUgraphicsResource* resources, MUstream hStream);
